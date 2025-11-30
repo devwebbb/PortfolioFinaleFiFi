@@ -1,0 +1,17 @@
+/* Dans ton fichier CSS global */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+ 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Pour un effet glass moderne */
+.modern-glass {
+  background: rgba(255, 255, 255, 0.25);
+  
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
