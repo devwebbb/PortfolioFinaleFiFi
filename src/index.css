@@ -59,7 +59,7 @@ html {
 }
 
 body {
-  background-image: url('/bgg.JPG');
+  background-image: url('../public/bgg.JPG');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
