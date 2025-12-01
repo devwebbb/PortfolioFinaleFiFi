@@ -59,15 +59,89 @@ html {
 }
 
 body {
-  background-image: url('../public/bgg.JPG');
+  background-image: url('./bgg.JPG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+   background-attachment: scroll !important; /* Changez fixed par scroll */
   background-repeat: no-repeat;
   color: var(--text-light);
   transition: background-color var(--transition-normal);
 }
 
+
+/* ============================================
+   FIX CRITIQUE POUR MOBILE - Background
+   ============================================ */
+
+/* 1. Supprimez background-attachment: fixed pour body */
+body {
+  background-attachment: scroll !important; /* Changez fixed par scroll */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 2. Fix pour TOUTES les sections qui utilisent le background */
+.hero-section,
+.about-section,
+.education-section,
+.skills-section,
+.projects-section,
+.certifications-section,
+.languages-section,
+.contact-section {
+  background-attachment: scroll !important;
+  position: relative;
+}
+
+/* 3. Overlay plus fort pour mobile */
+.hero-overlay,
+.about-overlay,
+.education-overlay,
+.skills-overlay,
+.projects-overlay,
+.certifications-overlay,
+.languages-overlay,
+.contact-overlay {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 4. Fallback absolu si l'image ne charge pas */
+@media (max-width: 768px) {
+  /* Si l'image échoue, utilisez un dégradé */
+ 
+  
+  /* Overlay encore plus foncé sur mobile */
+  .hero-overlay,
+  .about-overlay,
+  .education-overlay,
+  .skills-overlay,
+  .projects-overlay,
+  .certifications-overlay,
+  .languages-overlay,
+  .contact-overlay {
+    background: rgba(0, 0, 0, 0.7) !important;
+  }
+}
+
+/* 5. Debug visuel (optionnel - retirez après test) */
+.debug-bg {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #10b981;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 9999;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .debug-bg {
+    display: block;
+  }
+}
 .dark body {
   background-color: var(--bg-dark);
   color: var(--text-dark);
